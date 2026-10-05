@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Zeva Medical Centre | Quality Healthcare</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    :root {
+      --blue: #0066b3;
+      --dark-blue: #004b87;
+      --light-blue: #eaf6ff;
+      --yellow: #f9c400;
+      --white: #ffffff;
+      --dark: #18344a;
+      --gray: #f5f7fa;
+    }
+
+    body {
+      background: var(--white);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    /* ================= HEADER ================= */
+
+    header {
+      background: var(--white);
+      border-bottom: 4px solid var(--yellow);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+    }
+
+    .header-container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 12px 25px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logos {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    /* ENLARGED LOGOS */
+    .logo {
+      width: 115px;
+      height: 115px;
+      object-fit: contain;
+    }
+
+    .hospital-name h1 {
+      color: var(--blue);
+      font-size: 26px;
+      line-height: 1.1;
+    }
+
+    .hospital-name p {
+      color: #666;
+      font-size: 13px;
+    }
+
+    /* PHONE + EMAIL */
+    .header-contact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 18px;
+      margin-top: 8px;
+    }
+
+    .header-contact a {
+      color: var(--blue);
+      font-size: 14px;
+      font-weight: bold;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .header-contact a:hover {
+      color: var(--dark-blue);
+      text-decoration: underline;
+    }
+
+    /* NAVIGATION */
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 25px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--dark);
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--blue);
+    }
+
+    /* ================= HERO ================= */
+
+    .hero {
+      min-height: 550px;
+
+      background:
+        linear-gradient(
+          rgba(0, 83, 148, 0.88),
+          rgba(0, 83, 148, 0.88)
+        ),
+        url("hospital.jpg") center/cover;
+
+      display: flex;
+      align-items: center;
+      color: white;
+    }
+
+    .hero-content {
+      max-width: 1200px;
+      width: 100%;
+      margin: auto;
+      padding: 60px 25px;
+    }
+
+    .hero h2 {
+      font-size: 50px;
+      max-width: 750px;
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+
+    .hero h2 span {
+      color: var(--yellow);
+    }
+
+    .hero p {
+      max-width: 650px;
+      font-size: 19px;
+      margin-bottom: 35px;
+      color: #f0f7ff;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 15px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+      text-align: center;
+    }
+
+    .btn-yellow {
+      background: var(--yellow);
+      color: #17324d;
+    }
+
+    .btn-yellow:hover {
+      background: #ffd83d;
+      transform: translateY(-3px);
+    }
+
+    .btn-white {
+      background: white;
+      color: var(--blue);
+    }
+
+    .btn-white:hover {
+      background: #eaf6ff;
+      transform: translateY(-3px);
+    }
+
+    /* ================= QUICK SERVICES ================= */
+
+    .quick-services {
+      max-width: 1100px;
+      margin: -55px auto 50px;
+      position: relative;
+
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 20px;
+      padding: 0 20px;
+    }
+
+    .quick-card {
+      background: white;
+      padding: 28px;
+      border-radius: 12px;
+      text-align: center;
+
+      box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+
+      border-top: 5px solid var(--yellow);
+    }
+
+    .quick-card .icon {
+      font-size: 38px;
+      margin-bottom: 10px;
+    }
+
+    .quick-card h3 {
+      color: var(--blue);
+      margin-bottom: 8px;
+    }
+
+    /* ================= SECTIONS ================= */
+
+    section {
+      padding: 70px 20px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-title h2 {
+      color: var(--blue);
+      font-size: 34px;
+    }
+
+    .section-title .line {
+      width: 70px;
+      height: 4px;
+      background: var(--yellow);
+      margin: 12px auto;
+      border-radius: 5px;
+    }
+
+    .section-container {
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    /* ================= SERVICES ================= */
+
+    .services {
+      background: var(--gray);
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .service-card {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+
+      border-left: 5px solid var(--blue);
+
+      box-shadow: 0 5px 18px rgba(0,0,0,0.07);
+
+      transition: 0.3s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      border-left-color: var(--yellow);
+    }
+
+    .service-card h3 {
+      color: var(--blue);
+      margin-bottom: 10px;
+    }
+
+    .service-icon {
+      font-size: 35px;
+      margin-bottom: 10px;
+    }
+
+    /* ================= ABOUT ================= */
+
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      gap: 50px;
+      align-items: center;
+    }
+
+    .about h2 {
+      color: var(--blue);
+      font-size: 35px;
+      margin-bottom: 15px;
+    }
+
+    .about-image {
+      min-height: 330px;
+      border-radius: 15px;
+
+      background:
+        linear-gradient(
+          rgba(0, 102, 179, .2),
+          rgba(0, 102, 179, .2)
+        ),
+        url("hospital-about.jpg") center/cover;
+    }
+
+    /* ================= CONTACT ================= */
+
+    .contact {
+      background: var(--blue);
+      color: white;
+    }
+
+    .contact .section-title h2 {
+      color: white;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .contact-card {
+      text-align: center;
+
+      background: rgba(255,255,255,0.1);
+
+      padding: 30px;
+
+      border-radius: 12px;
+    }
+
+    .contact-card h3 {
+      color: var(--yellow);
+      margin-bottom: 10px;
+    }
+
+    .contact-card a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .contact-card a:hover {
+      text-decoration: underline;
+    }
+
+    /* ================= FOOTER ================= */
+
+    footer {
+      background: #00365f;
+      color: white;
+
+      padding: 30px 20px;
+
+      text-align: center;
+    }
+
+    footer strong {
+      color: var(--yellow);
+    }
+
+    /* ================= MOBILE ================= */
+
+    @media (max-width: 850px) {
+
+      .header-container {
+        flex-direction: column;
+      }
+
+      nav ul {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .hero h2 {
+        font-size: 38px;
+      }
+
+      .quick-services,
+      .service-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about {
+        grid-template-columns: 1fr;
+      }
+
+      .about-image {
+        order: -1;
+      }
+    }
+
+    @media (max-width: 500px) {
+
+      .logos {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .logo {
+        width: 105px;
+        height: 105px;
+      }
+
+      .header-contact {
+        justify-content: center;
+      }
+
+      .hero {
+        min-height: 500px;
+      }
+
+      .hero h2 {
+        font-size: 32px;
+      }
+
+      .buttons {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- ================= HEADER ================= -->
+
+  <header>
+
+    <div class="header-container">
+
+      <div class="logos">
+
+        <!-- ZEVA LOGO -->
+        <img
+          src="zeva.png"
+          alt="Zeva Medical Centre Logo"
+          class="logo"
+        >
+
+        <div class="hospital-name">
+
+          <h1>ZEVA MEDICAL CENTRE</h1>
+
+          <p>Your Health, Our Priority</p>
+
+          <!-- PHONE AND EMAIL -->
+          <div class="header-contact">
+
+            <a href="tel:0708534991">
+              📞 0708534991
+            </a>
+
+            <a href="mailto:zevamedical@gmail.com">
+              ✉️ zevamedical@gmail.com
+            </a>
+
+          </div>
+
+        </div>
+
+        <!-- MINISTRY OF HEALTH LOGO -->
+        <img
+          src="moh.png"
+          alt="Ministry of Health Logo"
+          class="logo"
+        >
+
+      </div>
+
+
+      <!-- NAVIGATION -->
+
+      <nav>
+
+        <ul>
+
+          <li>
+            <a href="#home">Home</a>
+          </li>
+
+          <li>
+            <a href="#services">Services</a>
+          </li>
+
+          <li>
+            <a href="#about">About Us</a>
+          </li>
+
+          <li>
+            <a href="#contact">Contact</a>
+          </li>
+
+        </ul>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <!-- ================= HERO ================= -->
+
+  <section class="hero" id="home">
+
+    <div class="hero-content">
+
+      <h2>
+        Your Health,<br>
+        <span>Our Priority.</span>
+      </h2>
+
+      <p>
+        Welcome to Zeva Medical Centre. We are committed
+        to providing safe, affordable and quality healthcare
+        services to our patients in a caring and professional
+        environment.
+      </p>
+
+      <div class="buttons">
+
+        <a
+          href="inpatient.html"
+          class="btn btn-yellow"
+        >
+          🛏️ Inpatient Services
+        </a>
+
+        <a
+          href="outpatient.html"
+          class="btn btn-white"
+        >
+          🩺 Outpatient Services
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= QUICK SERVICES ================= -->
+
+  <div class="quick-services">
+
+    <div class="quick-card">
+
+      <div class="icon">🚑</div>
+
+      <h3>Emergency Care</h3>
+
+      <p>
+        Professional emergency medical care
+        when you need it most.
+      </p>
+
+    </div>
+
+
+    <div class="quick-card">
+
+      <div class="icon">👨‍⚕️</div>
+
+      <h3>Qualified Doctors</h3>
+
+      <p>
+        Experienced healthcare professionals
+        dedicated to your wellbeing.
+      </p>
+
+    </div>
+
+
+    <div class="quick-card">
+
+      <div class="icon">❤️</div>
+
+      <h3>Patient Focused</h3>
+
+      <p>
+        Compassionate healthcare designed
+        around every patient's needs.
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <!-- ================= SERVICES ================= -->
+
+  <section
+    class="services"
+    id="services"
+  >
+
+    <div class="section-container">
+
+      <div class="section-title">
+
+        <h2>Our Medical Services</h2>
+
+        <div class="line"></div>
+
+        <p>
+          Comprehensive healthcare services
+          under one roof.
+        </p>
+
+      </div>
+
+
+      <div class="service-grid">
+
+
+        <div class="service-card">
+
+          <div class="service-icon">🩺</div>
+
+          <h3>Outpatient Care</h3>
+
+          <p>
+            Medical consultations, diagnosis,
+            treatment and follow-up services
+            for patients who do not require
+            admission.
+          </p>
+
+        </div>
+
+
+        <div class="service-card">
+
+          <div class="service-icon">🛏️</div>
+
+          <h3>Inpatient Care</h3>
+
+          <p>
+            Comfortable inpatient facilities
+            with professional nursing and
+            medical care throughout your stay.
+          </p>
+
+        </div>
+
+
+        <div class="service-card">
+
+          <div class="service-icon">💊</div>
+
+          <h3>Pharmacy</h3>
+
+          <p>
+            Convenient access to prescribed
+            medicines and professional
+            pharmaceutical guidance.
+          </p>
+
+        </div>
+
+
+        <div class="service-card">
+
+          <div class="service-icon">🔬</div>
+
+          <h3>Laboratory</h3>
+
+          <p>
+            Reliable laboratory investigations
+            to support accurate diagnosis
+            and treatment.
+          </p>
+
+        </div>
+
+
+        <div class="service-card">
+
+          <div class="service-icon">👶</div>
+
+          <h3>Maternal & Child Health</h3>
+
+          <p>
+            Dedicated healthcare services
+            supporting mothers, babies
+            and children.
+          </p>
+
+        </div>
+
+
+        <div class="service-card">
+
+          <div class="service-icon">🚨</div>
+
+          <h3>Emergency Services</h3>
+
+          <p>
+            Prompt medical attention for
+            urgent and emergency healthcare
+            needs.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= ABOUT ================= -->
+
+  <section id="about">
+
+    <div class="section-container">
+
+      <div class="about">
+
+        <div class="about-image"></div>
+
+        <div>
+
+          <h2>
+            About Zeva Medical Centre
+          </h2>
+
+          <p>
+            Zeva Medical Centre is committed
+            to delivering accessible, quality
+            and patient-centred healthcare
+            services.
+          </p>
+
+          <br>
+
+          <p>
+            Our team works together to provide
+            a welcoming environment where
+            patients receive professional
+            medical attention, dignity and
+            compassionate care.
+          </p>
+
+          <br>
+
+          <a
+            href="#contact"
+            class="btn btn-yellow"
+          >
+            Contact Us
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= CONTACT ================= -->
+
+  <section
+    class="contact"
+    id="contact"
+  >
+
+    <div class="section-container">
+
+      <div class="section-title">
+
+        <h2>
+          Contact Zeva Medical Centre
+        </h2>
+
+        <div class="line"></div>
+
+      </div>
+
+
+      <div class="contact-grid">
+
+
+        <!-- LOCATION -->
+
+        <div class="contact-card">
+
+          <h3>📍 Location</h3>
+
+          <p>
+            Kegogi<br>
+            Kenya
+          </p>
+
+        </div>
+
+
+        <!-- PHONE -->
+
+        <div class="contact-card">
+
+          <h3>📞 Phone</h3>
+
+          <p>
+            <a href="tel:0708534991">
+              0708534991
+            </a>
+          </p>
+
+        </div>
+
+
+        <!-- EMAIL -->
+
+        <div class="contact-card">
+
+          <h3>✉️ Email</h3>
+
+          <p>
+            <a href="mailto:zevamedical@gmail.com">
+              zevamedicalcentre@gmail.com
+            </a>
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= FOOTER ================= -->
+
+  <footer>
+
+    <p>
+      © 2026
+      <strong>Zeva Medical Centre</strong>.
+      
+    </p>
+
+    <p>
+      Quality Healthcare • Compassion • Excellence
+    </p>
+
+  </footer>
+
+
+</body>
+</html>
